@@ -1,8 +1,8 @@
 ## **🏠 Welcome to Homio**
 
-Homio is a clean, minimal, and fully YAML-based dashboard for Home Assistant that i build for a bit of fun. It's still work in progress but wanted to share it with you after receiving many requests for it. It’s built with tablets in mind — perfect for a wall-mounted screen — but it also works well on mobile thanks to its responsive layout. Everything is done in YAML to give you full control and make it easier to share, reuse, and tweak. I recommend to use the visual studio code editor plugin in home assistant to make coding that little bit easier.
+Homio is a clean, minimal, and fully YAML-based dashboard for Home Assistant that I build for a bit of fun. It's still work in progress but I wanted to share it with you after receiving many requests for it. It’s built with tablets in mind — perfect for a wall-mounted screen — but it also works well on mobile thanks to its responsive layout. Everything is done in YAML to give you full control and make it easier to share, reuse, and tweak. I recommend to use the Visual Studio code editor add-on in Home Assistant to make coding that little bit easier.
 
-I plan on looking to integrate/create other cards into the homio design in the very near future so feel free to reach out if you have any requests. 
+I plan on looking to integrate/create other cards into the homio design in the very near future, so feel free to reach out if you have any requests. 
 
 Desktop/Tablet view
 
@@ -19,7 +19,7 @@ Mobile view
 
 ## 🚀 **Getting Started**
 
-Please make sure to make a full backup of your current home assistant state, its just best practice. Before jumping in, make sure you’ve got the basics covered:
+Please make sure to make a full backup of your current Home Assistant state, it's just best practice. Before jumping in, make sure you’ve got the basics covered:
 
 1. Home Assistant in storage Mode
 Even though Homio is written entirely in YAML, you should leave the Lovelace mode set to storage in configuration.yaml. This allows you to keep using the UI editor for other dashboards, while loading Homio as a YAML dashboard.
@@ -38,15 +38,15 @@ lovelace:
 
 2. Homio uses a couple of custom cards,
 
-**button-card by Romraider** — https://github.com/custom-cards/button-card  - This is the main building block of Homio. Install it via HCS.
+**button-card by Romraider** — https://github.com/custom-cards/button-card  - This is the main building block of Homio. Install it via HACS.
 
-**layout-card by Thomas Loven** — https://github.com/thomasloven/lovelace-layout-card - You’ll need to actually use the slightly modified version included in this repo based on the layout-card by Thomas Loven              **https://github.com/iamtherufus/Homio/blob/main/layout-card-modified.js** which supports some extra CSS properties. Dont install this card via HACS, grab it from the repo and install it manually. If you have installed the un-modified version of this card via HACS in the past you will need to remove it otherwise it will conflict with the modified version from this repo.
+**layout-card by Thomas Loven** — https://github.com/thomasloven/lovelace-layout-card - You’ll need to actually use the slightly modified version included in this repo based on the layout-card by Thomas Loven              **https://github.com/iamtherufus/Homio/blob/main/layout-card-modified.js** which supports some extra CSS properties. Don't install this card via HACS, grab it from the repo and install it manually. If you have installed the un-modified version of this card via HACS in the past you will need to remove it; otherwise it will conflict with the modified version from this repo.
 
 The layout-card-modified needs to be installed in this location,
 
 **/www/community/layout-card-modified/layout-card-modified.js**
 
-**my-slider-v2 by AnthonMS** - This is a fantastic light slider created by AnthonMS which is used for the homio_light card brightness slider. Full details on his configuration can be found here.
+**my-slider-v2 by AnthonMS** - This is a fantastic light slider created by AnthonMS which is used for the homio_light card brightness slider. Full details on his configuration can be found here:
      **https://github.com/AnthonMS/my-cards/blob/main/docs/cards/slider-v2.md**
 
 The my-slider-V2 card needs to be installed in this location,
@@ -72,7 +72,7 @@ If you install either the layout-card-modified or my-slider-v2 to a different lo
 
 **UPDATE WARNING**
 
-Because we are putting lovelace into 'Storage' mode to protect previously created GUI dashboards,
+Because we are putting Lovelace into 'Storage' mode to protect previously created GUI dashboards,
 
 ```
 lovelace:
@@ -94,7 +94,7 @@ Make sure the cards mentioned above ARE all included under manage resources as w
 
 ## Theme file
 
-Make sure you load the homio theme file rather than the default HA one or one you were previously using. This will ensure you see all the correct fonts and colors. To do this navigate to your profile settings (click your user icon, usually in the bottom left) and select the homio theme from the dropdown menu.
+Make sure you load the Homio theme file rather than the default Home Assistant one (or one you were previously using). This will ensure you see all the correct fonts and colors. To do this navigate to your profile settings (click your user icon, usually in the bottom left) and select the Homio theme from the dropdown menu.
 
 
 ## 📁 Folder Structure
@@ -154,9 +154,9 @@ Everything lives under `/config` in your Home Assistant setup,
 
 ## **🖼️ Assets Setup – Images & Icons**
 
-To make Homio look the way it’s intended, you’ll need to add your own room images and icons to the www folder in Home Assistant. These are used for things like room backgrounds and custom icons inside button cards. I dont use the built in mdi icons as i dont like them, they are to bold for my liking. There are other HACS addons that you can use but i dont. I do use the google material icons though but download them from google at the 100 weight as i feel they fitted my design better. I will include these in the repo and i plan to keep adding to them as well.
+To make Homio look the way it’s intended, you’ll need to add your own room images and icons to the www folder in Home Assistant. These are used for things like room backgrounds and custom icons inside button cards. I don't use the built in MDI icons as I don't like them, they are too bold for my liking. There are other HACS addons that you can use but I don't. I do use the Google Material Icons though but download them from Google at the 100 weight as I feel they fitted the Homio design language better. I have included these in the repo and I plan to keep adding to them as well.
 
-Material design icons link can be found below, 
+The Material Design Icons link can be found below:
 
 **https://fonts.google.com/icons?icon.query=light**
 
@@ -219,13 +219,13 @@ These are used for visual cues like heating, doors, or lights. You can reference
 
 ## 🧱**Layout Cards**
 
-Homio uses a consistent layout across all dashboards powered by custom:layout-card (modified version required – see Setup Requirements). The layout file handles page sizing, grid setup, and responsive breakpoints. The layout are 'yaml include' files so you wont actually need to edit most of these files. You will just have to reference them in one line of code which is much nicer than having to type out the full yaml code for it every single time. 
+Homio uses a consistent layout across all dashboards powered by custom:layout-card (modified version required – see Setup Requirements). The layout file handles page sizing, grid setup, and responsive breakpoints. These layouts are included as YAML files, so you won't actually need to edit most of these files. Instead, you will just have to reference them in one line of code which is much nicer than having to type out the full YAML code for it every single time. 
 
 The files are found in the following directory,
 **/config/dashboards/templates/includes**
 
 ### **homio_screen_layout**
-Here’s what’s inside the main screen layout file. This is used for each room dasboard you create,
+Here’s what’s inside the main screen layout file. This is used for each room dashboard you create.
 
 **Example**
 ```
@@ -265,7 +265,7 @@ Use the layout in your dashboard YAML like this:
 
 The homio_enitiy_layout is designed to make placing entity cards in a consistent, responsive layout easy. It handles spacing, responsive column counts, and layout switching for mobile views.
 
-You don’t need to touch this file — just include it where you want a grid of homio_entity cards (or other custom buttons) to appear. However if you want vertical scroll on mobile for your entities make sure to uncomment the media query section.
+You don’t need to touch this file — just include it where you want a grid of homio_entity cards (or other custom buttons) to appear. However, if you want vertical scroll on mobile for your entities make sure to uncomment the media query section.
 
 **Example**
 
@@ -341,7 +341,7 @@ The key features of this are,
 
 ### **homio_navigation**
 
-This file builds the Homio Navigation Bar, automatically adapting to desktop and mobile devices. It includes the logo, navigation links, and current time display — all styled to match the Homio theme. You don’t need to touch this file. It includes the actual navigation list of items which is held in another yaml include file which will be outlined in the docs.
+This file builds the Homio Navigation Bar, automatically adapting to desktop and mobile devices. It includes the logo, navigation links, and current time display — all styled to match the Homio theme. You don’t need to touch this file. It includes the actual navigation list of items which is held in another YAML include file which will be outlined in the docs.
 
 **Example code**
 
@@ -472,7 +472,7 @@ This file contains the individual navigation buttons used in the top and side na
 
 ## **Button cards**
 
-These are split into two catergories, base and cards. Both of these dont really need to be touched, they just hold all the styles for the relvant cards. The base directory cards are for generic cards such as time etc and the cards directory is for enitiy cards.
+These are split into two categories, base and cards. Both of these don't really need to be touched, they just hold all the styles for the relevant cards. The base directory cards are for generic cards such as time etc and the cards directory is for entity cards.
 
 ### **homio_default**
 
@@ -654,7 +654,7 @@ homio_nav_button:
 
 ### **homio_time**
 
-This sits in the main navigation and just pulls the current time for the sensor created in the sensors.yaml file in the root of the /config folder
+This sits in the main navigation and just pulls the current time for the sensor created in the sensors.yaml file in the root of the /config folder,
 
 **Example**
 ```
@@ -679,19 +679,19 @@ homio_time:
 
 ## **Entity Cards**
 
-These are currently the cards I have setup,
+These are currently the cards I have setup:
 - Room card
 - Light card
 - Thermostat card
   
-There are more to come in the future that i am currently building.
+There are more to come in the future that I am currently building.
 
 ### **homio_room**
 
 <img width="1482" alt="Screenshot 2025-06-12 at 11 16 22" src="https://github.com/user-attachments/assets/e0a7dacf-6e47-4f03-96c4-c9cee3ec2bc9" />
 
 
-The homio room card acts as the top visual banner for each room or area on your dashboard. It typically includes a large background image, room name, temperature/humidity readouts, and optional motion detection feedback.
+The Homio room card acts as the top visual banner for each room or area on your dashboard. It typically includes a large background image, room name, temperature/humidity readouts, and optional motion detection feedback.
 
 This card is intended to be used once per room dashboard, placed at the top for an immersive overview.
 
@@ -771,7 +771,7 @@ my-slider-v2 must be installed via HACS or manually, and the resource must be in
 <img width="260" alt="Screenshot 2025-06-12 at 11 15 25" src="https://github.com/user-attachments/assets/39a8330b-ef0e-423a-8d72-a21e482c8a57" />
 
 
-The homio thermostat template brings smart control to your heating setup. It combines HVAC mode switching, target temperature setting, and a clean display layout using only button-card and layout-card components.
+The Homio thermostat template brings smart control to your heating setup. It combines HVAC mode switching, target temperature setting, and a clean display layout using only button-card and layout-card components.
 
 Make sure to use the template named homio_thermostat for the custom button card,
 
@@ -872,6 +872,6 @@ views:
 ```
 
 ## We made it to the end together
-I really hope you enjoy using homio, i've enjoyed building it and im still so overwhelmed with all the positive feedback and uptake its recieved. Thanks for all the kind messages i have recieved as well. If you want to buy me a coffee to say thanks and keep me awake feel free.
+I really hope you enjoy using homio, I've enjoyed building it and I'm still so overwhelmed with all the positive feedback and uptake it's received. Thanks for all the kind messages I have received as well. If you want to buy me a coffee to say thanks and keep me awake, feel free.
 
 <a href="https://www.buymeacoffee.com/iamtherufus" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
